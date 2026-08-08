@@ -258,6 +258,52 @@
   animation: bob 6s ease-in-out infinite;
 }
 
+/* O texto do "Quem somos" é longo: a foto acompanha a leitura */
+.section--sobre .grid-2 { align-items: start; }
+.section--sobre .sobre__media { position: sticky; top: calc(var(--header-h) + 2rem); }
+
+.sobre__content .section__lead { margin-bottom: 1.1rem; }
+
+.sobre__texto {
+  font-size: .95rem;
+  line-height: 1.75;
+  color: var(--tinta-suave);
+  margin-bottom: 1.1rem;
+  max-width: 60ch;
+}
+
+/* Assinatura da marca ao fim da história */
+.sobre__assinatura {
+  position: relative;
+  margin: 1.8rem 0 2rem;
+  padding-left: 1.4rem;
+  border-left: 3px solid transparent;
+  border-image: var(--grad-dourado) 1;
+  font-family: var(--font-titulo);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--rosa-escuro);
+  max-width: 46ch;
+}
+
+.sobre__assinatura::before {
+  content: "D'Lícias Gourmet";
+  display: block;
+  margin-bottom: .3rem;
+  font-family: var(--font-corpo);
+  font-size: .72rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: var(--grad-dourado-texto);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--dourado);
+}
+
 .feature-list {
   display: flex;
   flex-direction: column;

@@ -38,14 +38,10 @@ dlicias-gourmet/
     └── products/           → arquivos originais enviados (backup)
 ```
 
-> **Atenção às fotos atuais dos produtos:** várias das imagens em
-> `assets/img/produtos/` têm **texto em inglês visível** (placas com
-> "PARTY SNACKS", "FROZEN & FABULOUS", rótulos como "TRUFFLE ARANCINI",
-> "MINI QUICHES" e até preço em dólar na foto do bolo gelado). Algumas
-> também **não mostram o produto certo** — a de "Bala de Coco com
-> Brigadeirão" e a de "Palha Italiana" mostram bolos de chocolate.
-> O ideal é substituí-las por fotos reais dos produtos da D'Licias.
-> Basta salvar por cima, com o mesmo nome de arquivo.
+> **Falta a foto de um produto:** o **Brigadeiro Gourmet** ainda usa uma
+> imagem genérica gerada por IA. Todos os outros já estão com fotos reais.
+> Para trocar, salve a foto nova em `assets/img/produtos/` e ajuste a
+> lista `imgs` desse produto no `js/data.js`.
 
 ---
 

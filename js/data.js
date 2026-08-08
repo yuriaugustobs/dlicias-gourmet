@@ -135,8 +135,7 @@ const PRODUTOS = [
       'assets/img/produtos/bento-cake-9.jpg',
       'assets/img/produtos/bento-cake-10.jpg',
       'assets/img/produtos/bento-cake-11.jpg',
-      'assets/img/produtos/bento-cake-12.jpg',
-      'assets/img/produtos/bento-cake-13.jpg'
+      'assets/img/produtos/bento-cake-12.jpg'
     ],
     desc: 'O bolinho na caixinha que virou febre: perfeito para presentear, com a mensagem que você quiser.',
     destaque: 'Presente'
@@ -210,7 +209,12 @@ const PRODUTOS = [
     categoria: 'especiais',
     emoji: '💝',
     imgs: [
-      'assets/img/produtos/brigadeiro-personalizado.jpg'
+      'assets/img/produtos/brigadeiro-personalizado-1.jpg',
+      'assets/img/produtos/brigadeiro-personalizado-2.jpg',
+      'assets/img/produtos/brigadeiro-personalizado-3.jpg',
+      'assets/img/produtos/brigadeiro-personalizado-4.jpg',
+      'assets/img/produtos/brigadeiro-personalizado-5.jpg',
+      'assets/img/produtos/brigadeiro-personalizado-6.jpg'
     ],
     desc: 'Nas cores e no tema da sua festa: 15 anos, chá revelação, eventos cristãos, casamentos e mais.',
     destaque: 'Sob encomenda'
@@ -220,7 +224,9 @@ const PRODUTOS = [
     categoria: 'doces',
     emoji: '🍬',
     imgs: [
-      'assets/img/produtos/palha-italiana.jpg'
+      'assets/img/produtos/palha-italiana-1.jpg',
+      'assets/img/produtos/palha-italiana-2.jpg',
+      'assets/img/produtos/palha-italiana-3.jpg'
     ],
     desc: 'Brigadeiro cremoso com pedaços de biscoito, no ponto exato entre macio e crocante.'
   },
@@ -229,7 +235,10 @@ const PRODUTOS = [
     categoria: 'doces',
     emoji: '🥥',
     imgs: [
-      'assets/img/produtos/bala-coco.jpg'
+      'assets/img/produtos/bala-coco-1.jpg',
+      'assets/img/produtos/bala-coco-2.jpg',
+      'assets/img/produtos/bala-coco-3.jpg',
+      'assets/img/produtos/bala-coco-4.jpg'
     ],
     desc: 'Bala de coco artesanal recheada com brigadeirão. Uma combinação que conquista de primeira.'
   },
@@ -238,7 +247,20 @@ const PRODUTOS = [
     categoria: 'especiais',
     emoji: '🍪',
     imgs: [
-      'assets/img/produtos/biscoitos.jpg'
+      'assets/img/produtos/biscoitos-1.jpg',
+      'assets/img/produtos/biscoitos-2.jpg',
+      'assets/img/produtos/biscoitos-3.jpg',
+      'assets/img/produtos/biscoitos-4.jpg',
+      'assets/img/produtos/biscoitos-5.jpg',
+      'assets/img/produtos/biscoitos-6.jpg',
+      'assets/img/produtos/biscoitos-7.jpg',
+      'assets/img/produtos/biscoitos-8.jpg',
+      'assets/img/produtos/biscoitos-9.jpg',
+      'assets/img/produtos/biscoitos-10.jpg',
+      'assets/img/produtos/biscoitos-11.jpg',
+      'assets/img/produtos/biscoitos-12.jpg',
+      'assets/img/produtos/biscoitos-13.jpg',
+      'assets/img/produtos/biscoitos-14.jpg'
     ],
     desc: 'Biscoitos decorados à mão com o tema do seu evento. Viram lembrancinha e enfeite de mesa.',
     destaque: 'Sob encomenda'

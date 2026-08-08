@@ -58,6 +58,18 @@
   .sobre__media { width: 100%; max-width: 480px; margin-inline: auto; }
   .sobre__content { text-align: center; }
   .sobre__content .section__lead { margin-inline: auto; }
+  .sobre__texto { margin-inline: auto; }
+
+  /* Sem sticky quando está empilhado */
+  .section--sobre .sobre__media { position: relative; top: auto; }
+
+  /* Assinatura centralizada, sem a barra lateral */
+  .sobre__assinatura {
+    margin-inline: auto;
+    padding-left: 0;
+    border-left: 0;
+    text-align: center;
+  }
   .feature { text-align: left; }
   .feature-list { max-width: 480px; margin: 2rem auto 2.4rem; }
 
