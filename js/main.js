@@ -190,20 +190,71 @@
     });
   }
 
+  /** Monta a área da foto: uma imagem só ou um álbum navegável. */
+  function galeriaProduto(p) {
+    const fotos = Array.isArray(p.imgs) ? p.imgs : [];
+
+    // Sem foto cadastrada: mostra só o fundo decorado com o emoji
+    if (!fotos.length) {
+      return `<div class="product__media is-empty">${placeholderProduto(p)}</div>`;
+    }
+
+    const slides = fotos.map((src, i) => `
+      <img src="${src}" alt="${esc(p.nome)}${fotos.length > 1 ? ` — foto ${i + 1}` : ''}"
+           class="pgal__img${i === 0 ? ' is-active' : ''}"
+           loading="${i === 0 ? 'lazy' : 'lazy'}"
+           onerror="this.remove()">
+    `).join('');
+
+    // Uma foto só: sem controles
+    if (fotos.length === 1) {
+      return `
+        <div class="product__media">
+          ${p.destaque ? `<span class="product__badge">${esc(p.destaque)}</span>` : ''}
+          <div class="pgal">${slides}</div>
+          ${placeholderProduto(p)}
+        </div>`;
+    }
+
+    // Álbum: setas, contador e — se forem poucas — pontinhos
+    const dots = fotos.length <= 6
+      ? `<div class="pgal__dots">${fotos.map((_, i) =>
+          `<button class="pgal__dot${i === 0 ? ' is-active' : ''}" data-go="${i}" aria-label="Foto ${i + 1}"></button>`
+        ).join('')}</div>`
+      : '';
+
+    return `
+      <div class="product__media" data-gal>
+        ${p.destaque ? `<span class="product__badge">${esc(p.destaque)}</span>` : ''}
+        <div class="pgal">${slides}</div>
+
+        <button class="pgal__nav pgal__nav--prev" data-step="-1" aria-label="Foto anterior de ${esc(p.nome)}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="pgal__nav pgal__nav--next" data-step="1" aria-label="Próxima foto de ${esc(p.nome)}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+
+        <span class="pgal__count"><b>1</b>/${fotos.length}</span>
+        ${dots}
+        ${placeholderProduto(p)}
+      </div>`;
+  }
+
+  function placeholderProduto(p) {
+    return `
+      <div class="product__ph" aria-hidden="true">
+        <span class="product__ph-emoji">${p.emoji}</span>
+        <span class="product__ph-text">D'Licias Gourmet</span>
+      </div>`;
+  }
+
   function cardProduto(p, i) {
     const msg = `Olá! Vim pelo site e tenho interesse em: *${p.nome}*. Pode me passar mais informações?`;
 
     return `
       <article class="product is-entering" style="animation-delay:${i * 55}ms">
-        <div class="product__media">
-          ${p.destaque ? `<span class="product__badge">${esc(p.destaque)}</span>` : ''}
-          <img src="${p.img}" alt="${esc(p.nome)}" class="product__img" loading="lazy"
-               onerror="this.closest('.product__media').classList.add('is-empty')">
-          <div class="product__ph" aria-hidden="true">
-            <span class="product__ph-emoji">${p.emoji}</span>
-            <span class="product__ph-text">D'Licias Gourmet</span>
-          </div>
-        </div>
+        ${galeriaProduto(p)}
 
         <div class="product__body">
           <span class="product__cat">${esc(nomeCategoria(p.categoria))}</span>
@@ -228,6 +279,72 @@
     grade.innerHTML = lista.map(cardProduto).join('');
     vazio.hidden = lista.length > 0;
   }
+
+  /* ----- Álbum de fotos dentro do card ----- */
+
+  /** Troca a foto visível de um card. */
+  function irFoto(media, alvo) {
+    const fotos = $$('.pgal__img', media);
+    if (fotos.length < 2) return;
+
+    const atual = fotos.findIndex(f => f.classList.contains('is-active'));
+    const novo = (alvo + fotos.length) % fotos.length;
+    if (novo === atual) return;
+
+    fotos.forEach((f, i) => {
+      // A foto que sai fica opaca por baixo, evitando o efeito "fantasma"
+      f.classList.toggle('is-prev', i === atual);
+      f.classList.toggle('is-active', i === novo);
+    });
+
+    const dots = $$('.pgal__dot', media);
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === novo));
+
+    const contador = $('.pgal__count b', media);
+    if (contador) contador.textContent = novo + 1;
+  }
+
+  function indiceAtual(media) {
+    return $$('.pgal__img', media).findIndex(f => f.classList.contains('is-active'));
+  }
+
+  /** Cliques nas setas e nos pontinhos (delegado para a grade toda). */
+  grade.addEventListener('click', (ev) => {
+    const passo = ev.target.closest('[data-step]');
+    const ponto = ev.target.closest('[data-go]');
+    if (!passo && !ponto) return;
+
+    ev.preventDefault();
+    const media = (passo || ponto).closest('.product__media');
+
+    if (passo) irFoto(media, indiceAtual(media) + Number(passo.dataset.step));
+    else       irFoto(media, Number(ponto.dataset.go));
+  });
+
+  /** Arrastar para o lado no celular. */
+  let toqueX = null;
+  let toqueY = null;
+
+  grade.addEventListener('touchstart', (ev) => {
+    if (!ev.target.closest('[data-gal]')) return;
+    toqueX = ev.touches[0].clientX;
+    toqueY = ev.touches[0].clientY;
+  }, { passive: true });
+
+  grade.addEventListener('touchend', (ev) => {
+    if (toqueX === null) return;
+
+    const media = ev.target.closest('[data-gal]');
+    const dx = ev.changedTouches[0].clientX - toqueX;
+    const dy = ev.changedTouches[0].clientY - toqueY;
+
+    // Só troca a foto se o gesto foi claramente horizontal
+    if (media && Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      irFoto(media, indiceAtual(media) + (dx < 0 ? 1 : -1));
+    }
+
+    toqueX = toqueY = null;
+  }, { passive: true });
 
   /* ==========================================================
      6. SLIDER DA SEÇÃO SOBRE

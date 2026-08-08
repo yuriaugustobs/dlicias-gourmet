@@ -467,27 +467,115 @@
   background: var(--rosa-claro);
 }
 
-.product__img {
+/* ---- Álbum de fotos do card ---- */
+.pgal {
+  position: absolute;
+  inset: 0;
+}
+
+.pgal__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .7s cubic-bezier(.16, 1, .3, 1);
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .45s ease, transform .7s cubic-bezier(.16, 1, .3, 1);
 }
-.product:hover .product__img { transform: scale(1.07); }
 
-/* Fundo decorado enquanto a foto real não é adicionada */
+/* A foto que sai continua opaca por baixo — evita ver as duas ao mesmo tempo */
+.pgal__img.is-prev   { opacity: 1; z-index: 1; transition: none; }
+.pgal__img.is-active { opacity: 1; z-index: 2; }
+
+.product:hover .pgal__img.is-active { transform: scale(1.06); }
+
+/* Setas */
+.pgal__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, .9);
+  color: var(--rosa-escuro);
+  box-shadow: var(--sombra-sm);
+  opacity: 0;
+  transition: opacity var(--t), background var(--t-rapida), color var(--t-rapida);
+}
+
+.product:hover .pgal__nav,
+.pgal__nav:focus-visible { opacity: 1; }
+
+.pgal__nav:hover { background: var(--rosa-forte); color: #fff; }
+.pgal__nav svg { width: 17px; height: 17px; }
+
+.pgal__nav--prev { left: 10px; }
+.pgal__nav--next { right: 10px; }
+
+/* Contador */
+.pgal__count {
+  position: absolute;
+  top: .85rem;
+  right: .85rem;
+  z-index: 4;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  background: rgba(58, 42, 48, .55);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.pgal__count b { font-weight: 700; }
+
+/* Pontinhos (só quando são poucas fotos) */
+.pgal__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 4;
+  display: flex;
+  gap: .35rem;
+  transform: translateX(-50%);
+  padding: .3rem .5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(5px);
+}
+
+.pgal__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--rosa-suave);
+  transition: width var(--t), background var(--t-rapida);
+}
+
+.pgal__dot.is-active {
+  width: 20px;
+  background: var(--grad-dourado);
+}
+
+/* Fundo decorado. Fica sempre no fundo do card: se não houver foto
+   cadastrada — ou se alguma falhar ao carregar — ele aparece sozinho,
+   sem imagem quebrada. */
 .product__ph {
   position: absolute;
   inset: 0;
-  display: none;
+  z-index: 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: .35rem;
   background: linear-gradient(150deg, var(--rosa-claro) 0%, #fff 55%, var(--dourado-luz) 130%);
 }
-.product__media.is-empty .product__img { display: none; }
-.product__media.is-empty .product__ph  { display: flex; }
 
 .product__ph-emoji {
   font-size: 2.6rem;
@@ -507,7 +595,7 @@
   position: absolute;
   top: .85rem;
   left: .85rem;
-  z-index: 2;
+  z-index: 5;   /* acima das fotos do álbum */
   padding: .3rem .8rem;
   border-radius: 999px;
   background: var(--grad-dourado);

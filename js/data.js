@@ -41,8 +41,7 @@ const EMPRESA = {
 
 /* ------------------------------------------------------------
    CATEGORIAS
-   O "id" liga o produto ao filtro. O "emoji" aparece no card
-   enquanto a foto real não é adicionada.
+   O "id" liga o produto ao filtro.
 ------------------------------------------------------------ */
 const CATEGORIAS = [
   { id: 'todos',    nome: 'Ver tudo' },
@@ -55,9 +54,13 @@ const CATEGORIAS = [
 /* ------------------------------------------------------------
    PRODUTOS
    ------------------------------------------------------------
-   Para adicionar a foto de um produto:
-   1. Salve a imagem em  assets/img/produtos/
-   2. Ajuste o campo "img" abaixo com o nome do arquivo
+   O campo "imgs" é uma LISTA de fotos. Quando tem mais de uma,
+   o card vira um álbum com setas, contador e arrastar no celular.
+
+   Para adicionar fotos a um produto:
+   1. Salve as imagens em  assets/img/produtos/
+   2. Acrescente o caminho na lista "imgs" do produto
+
    Enquanto não houver foto, o card mostra um fundo decorado
    com o emoji — o site continua bonito.
 ------------------------------------------------------------ */
@@ -66,15 +69,31 @@ const PRODUTOS = [
     nome: 'Salgados Congelados Gourmet',
     categoria: 'salgados',
     emoji: '🥟',
-    img: 'assets/img/produtos/salgados-congelados.jpg',
+    imgs: [
+      'assets/img/produtos/salgados-congelados-1.jpg',
+      'assets/img/produtos/salgados-congelados-2.jpg'
+    ],
     desc: 'Vários tamanhos e sabores, prontos para fritar ou assar. Ideais para festas, lanchonetes e para ter sempre no freezer.',
     destaque: 'Mais pedido'
+  },
+  {
+    nome: 'Coxinhas',
+    categoria: 'salgados',
+    emoji: '🍗',
+    imgs: [
+      'assets/img/produtos/coxinhas-1.jpg',
+      'assets/img/produtos/coxinhas-2.jpg'
+    ],
+    desc: 'Massa leve, empanado crocante e recheio caprichado. A queridinha de toda festa, do jeito que todo mundo espera.'
   },
   {
     nome: 'Nhoque Recheado',
     categoria: 'salgados',
     emoji: '🍝',
-    img: 'assets/img/produtos/nhoque-recheado.jpg',
+    imgs: [
+      'assets/img/produtos/nhoque-recheado-1.jpg',
+      'assets/img/produtos/nhoque-recheado-2.jpg'
+    ],
     desc: 'Nossa novidade: nhoque artesanal com recheio cremoso, massa macia e sabor de comida caseira.',
     destaque: 'Novidade'
   },
@@ -82,14 +101,21 @@ const PRODUTOS = [
     nome: 'Empadas',
     categoria: 'salgados',
     emoji: '🥧',
-    img: 'assets/img/produtos/empadas.jpg',
+    imgs: [
+      'assets/img/produtos/empadas-1.jpg',
+      'assets/img/produtos/empadas-2.jpg'
+    ],
     desc: 'Massa amanteigada que desmancha na boca e recheio generoso. Uma delícia clássica bem feita.'
   },
   {
-    nome: 'Churros',
+    nome: 'Mini Churros',
     categoria: 'doces',
     emoji: '🌭',
-    img: 'assets/img/produtos/churros.jpg',
+    imgs: [
+      'assets/img/produtos/churros-1.jpg',
+      'assets/img/produtos/churros-2.jpg',
+      'assets/img/produtos/churros-3.jpg'
+    ],
     desc: 'Churros crocantes por fora e macios por dentro, com recheio cremoso do jeitinho que você gosta.',
     destaque: 'Novidade'
   },
@@ -97,50 +123,95 @@ const PRODUTOS = [
     nome: 'Bentô Cake',
     categoria: 'bolos',
     emoji: '🎂',
-    img: 'assets/img/produtos/bento-cake.jpg',
-    desc: 'O bolinho na caixinha que virou febre: perfeito para presentear, com mensagem personalizada.',
+    imgs: [
+      'assets/img/produtos/bento-cake-1.jpg',
+      'assets/img/produtos/bento-cake-2.jpg',
+      'assets/img/produtos/bento-cake-3.jpg',
+      'assets/img/produtos/bento-cake-4.jpg',
+      'assets/img/produtos/bento-cake-5.jpg',
+      'assets/img/produtos/bento-cake-6.jpg',
+      'assets/img/produtos/bento-cake-7.jpg',
+      'assets/img/produtos/bento-cake-8.jpg',
+      'assets/img/produtos/bento-cake-9.jpg',
+      'assets/img/produtos/bento-cake-10.jpg',
+      'assets/img/produtos/bento-cake-11.jpg',
+      'assets/img/produtos/bento-cake-12.jpg',
+      'assets/img/produtos/bento-cake-13.jpg'
+    ],
+    desc: 'O bolinho na caixinha que virou febre: perfeito para presentear, com a mensagem que você quiser.',
     destaque: 'Presente'
   },
   {
     nome: 'Caseirinho com Cobertura',
     categoria: 'bolos',
     emoji: '🍰',
-    img: 'assets/img/produtos/caseirinho.jpg',
+    imgs: [
+      'assets/img/produtos/caseirinho-1.jpg',
+      'assets/img/produtos/caseirinho-2.jpg',
+      'assets/img/produtos/caseirinho-3.jpg'
+    ],
     desc: 'Bolo caseiro com cobertura de porcelana ou brigadeirão gourmet. Aquele sabor de casa com acabamento fino.'
   },
   {
     nome: 'Mini Caseirinho Vulcão',
     categoria: 'bolos',
     emoji: '🌋',
-    img: 'assets/img/produtos/mini-vulcao.jpg',
+    imgs: [
+      'assets/img/produtos/mini-vulcao-1.jpg',
+      'assets/img/produtos/mini-vulcao-2.jpg'
+    ],
     desc: 'Versão mini e irresistível: recheio que escorre na hora da colherada. Impossível comer só um.'
   },
   {
     nome: 'Bolo Gelado na Marmita',
     categoria: 'bolos',
     emoji: '🍮',
-    img: 'assets/img/produtos/bolo-gelado.jpg',
+    imgs: [
+      'assets/img/produtos/bolo-gelado-1.jpg'
+    ],
     desc: 'Bolo gelado, molhadinho e servido na marmita — prático para levar e ótimo para revender.'
   },
   {
     nome: 'Torta Gelada no Pote',
     categoria: 'bolos',
     emoji: '🍨',
-    img: 'assets/img/produtos/torta-pote.jpg',
+    imgs: [
+      'assets/img/produtos/torta-pote-1.jpg',
+      'assets/img/produtos/torta-pote-2.jpg'
+    ],
     desc: 'Camadas de creme, biscoito e cobertura em uma porção individual. Refrescante e cremosa.'
+  },
+  {
+    nome: 'Donuts & Cake Donuts',
+    categoria: 'doces',
+    emoji: '🍩',
+    imgs: [
+      'assets/img/produtos/donuts-1.jpg',
+      'assets/img/produtos/donuts-2.jpg',
+      'assets/img/produtos/donuts-3.jpg',
+      'assets/img/produtos/donuts-4.jpg',
+      'assets/img/produtos/donuts-5.jpg',
+      'assets/img/produtos/donuts-6.jpg',
+      'assets/img/produtos/donuts-7.jpg'
+    ],
+    desc: 'Donuts fofinhos e cake donuts com coberturas coloridas. Sucesso garantido com a criançada.'
   },
   {
     nome: 'Brigadeiro Gourmet',
     categoria: 'doces',
     emoji: '🍫',
-    img: 'assets/img/produtos/brigadeiro-gourmet.jpg',
+    imgs: [
+      'assets/img/produtos/brigadeiro-gourmet.jpg'
+    ],
     desc: 'Feito com chocolate nobre e ponto certinho. Diversos sabores para montar a sua caixa.'
   },
   {
     nome: 'Brigadeiro Personalizado',
     categoria: 'especiais',
     emoji: '💝',
-    img: 'assets/img/produtos/brigadeiro-personalizado.jpg',
+    imgs: [
+      'assets/img/produtos/brigadeiro-personalizado.jpg'
+    ],
     desc: 'Nas cores e no tema da sua festa: 15 anos, chá revelação, eventos cristãos, casamentos e mais.',
     destaque: 'Sob encomenda'
   },
@@ -148,28 +219,27 @@ const PRODUTOS = [
     nome: 'Palha Italiana',
     categoria: 'doces',
     emoji: '🍬',
-    img: 'assets/img/produtos/palha-italiana.jpg',
+    imgs: [
+      'assets/img/produtos/palha-italiana.jpg'
+    ],
     desc: 'Brigadeiro cremoso com pedaços de biscoito, no ponto exato entre macio e crocante.'
   },
   {
     nome: 'Bala de Coco com Brigadeirão',
     categoria: 'doces',
     emoji: '🥥',
-    img: 'assets/img/produtos/bala-coco.jpg',
+    imgs: [
+      'assets/img/produtos/bala-coco.jpg'
+    ],
     desc: 'Bala de coco artesanal recheada com brigadeirão. Uma combinação que conquista de primeira.'
-  },
-  {
-    nome: 'Donuts & Cake Donuts',
-    categoria: 'doces',
-    emoji: '🍩',
-    img: 'assets/img/produtos/donuts.jpg',
-    desc: 'Donuts fofinhos e cake donuts com coberturas coloridas. Sucesso garantido com a criançada.'
   },
   {
     nome: 'Biscoitos Personalizados',
     categoria: 'especiais',
     emoji: '🍪',
-    img: 'assets/img/produtos/biscoitos.jpg',
+    imgs: [
+      'assets/img/produtos/biscoitos.jpg'
+    ],
     desc: 'Biscoitos decorados à mão com o tema do seu evento. Viram lembrancinha e enfeite de mesa.',
     destaque: 'Sob encomenda'
   }
@@ -187,6 +257,6 @@ const FRASES_MARQUEE = [
   'Palha italiana',
   'Torta gelada no pote',
   'Biscoitos personalizados',
-  'Churros',
+  'Mini churros',
   'Nhoque recheado'
 ];

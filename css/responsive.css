@@ -228,6 +228,11 @@
   /* Produtos */
   .products { grid-template-columns: 1fr; gap: 1.1rem; }
   .product__media { aspect-ratio: 16 / 11; }
+
+  /* No celular não existe hover: as setas ficam sempre visíveis */
+  .pgal__nav { opacity: 1; width: 32px; height: 32px; }
+  .pgal__nav--prev { left: 8px; }
+  .pgal__nav--next { right: 8px; }
   .product__body { padding: 1.1rem 1.2rem 1.3rem; }
   .product__name { font-size: 1.15rem; }
 

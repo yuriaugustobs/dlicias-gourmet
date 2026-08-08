@@ -80,20 +80,33 @@ logo provisória em SVG.
 Para **trocar** uma foto existente, basta salvar a nova por cima, com o
 mesmo nome do arquivo em `assets/img/produtos/` — não precisa mexer em código.
 
-Para **adicionar** uma foto nova:
+Para **adicionar** fotos novas:
 
-1. Salve a foto em `assets/img/produtos/`
-2. Abra `js/data.js` e ajuste o campo `img` do produto:
+1. Salve as fotos em `assets/img/produtos/`
+2. Abra `js/data.js` e acrescente o caminho na lista `imgs` do produto:
 
 ```js
 {
   nome: 'Bentô Cake',
   categoria: 'bolos',
   emoji: '🎂',
-  img: 'assets/img/produtos/bento-cake.jpg',   // ← nome do arquivo aqui
+  imgs: [                                       // ← lista de fotos
+    'assets/img/produtos/bento-cake-1.jpg',
+    'assets/img/produtos/bento-cake-2.jpg',
+    'assets/img/produtos/bento-cake-3.jpg'
+  ],
   desc: '...'
 }
 ```
+
+**Quando o produto tem mais de uma foto**, o card vira um álbum
+automaticamente: setas nas laterais, contador (`1/13`) no canto e
+arrastar com o dedo no celular. Os pontinhos aparecem só quando são até
+6 fotos — acima disso ficariam pequenos demais e o contador dá conta.
+
+Se uma foto não existir ou falhar ao carregar, ela some do álbum sozinha,
+sem imagem quebrada. Se nenhuma carregar, aparece o fundo decorado com o
+emoji do produto.
 
 Enquanto não houver foto, o card mostra um fundo decorado com o emoji — o site
 continua bonito e sem imagem quebrada. Ideal: fotos quadradas ou 4:3, com no
@@ -106,17 +119,14 @@ Os filtros e a contagem por categoria se atualizam sozinhos.
 
 ---
 
-## Como colocar o endereço no mapa
+## Endereço
 
-No `index.html`, procure por `<!-- TROQUE o "q=" abaixo` (seção de contato) e
-substitua o endereço na URL do iframe:
+**Rua Amin José Barreto, 458 — Belvedere, Divinópolis/MG.**
 
-```html
-src="https://www.google.com/maps?q=Rua+Exemplo,+123,+Divinopolis+MG&output=embed"
-```
-
-Depois atualize também os textos "Endereço completo em breve" logo abaixo do mapa
-e no card 📍 "Onde estamos".
+Aparece em três lugares do `index.html`: no mapa (iframe da seção de
+contato), no card 📍 "Onde estamos" e no rodapé. Para mudar, procure por
+`Amin` no arquivo e ajuste os três — inclusive o endereço dentro da URL
+do mapa, depois de `q=`.
 
 ---
 
