@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#D9557B">
+
+  <title>D'Licias Gourmet — Salgados Congelados, Bentô Cake e Doces Gourmet | Divinópolis MG</title>
+  <meta name="description" content="D'Licias Gourmet em Divinópolis/MG: salgados congelados gourmet, bentô cake, caseirinhos, brigadeiros personalizados, donuts, churros e muito mais. Encomende pelo WhatsApp. Trabalhamos com revenda.">
+  <meta name="keywords" content="salgados congelados, bentô cake, brigadeiro gourmet, doces personalizados, Divinópolis, revenda de salgados, palha italiana, donuts">
+  <meta name="author" content="D'Licias Gourmet">
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="D'Licias Gourmet — Doces e Salgados Gourmet">
+  <meta property="og:description" content="Salgados congelados gourmet, bentô cake, caseirinhos e doces artesanais em Divinópolis/MG. Encomende pelo WhatsApp.">
+  <meta property="og:image" content="assets/img/sobre-1.png">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+
+  <!-- Tipografia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Atalho de acessibilidade -->
+  <a class="skip-link" href="#produtos">Ir para os produtos</a>
+
+  <!-- ============================================================
+       HEADER / NAVEGAÇÃO
+  ============================================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <a href="#inicio" class="logo" aria-label="D'Licias Gourmet - página inicial">
+        <img src="assets/img/logo.png" alt="Logo D'Licias Gourmet" class="logo__img" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/img/logo.svg'}else{this.classList.add('is-missing')}">
+        <span class="logo__text">
+          <span class="logo__name">D'Licias</span>
+          <span class="logo__sub">Gourmet</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#inicio"    class="nav__link is-active">Início</a></li>
+          <li><a href="#sobre"     class="nav__link">Sobre</a></li>
+          <li><a href="#produtos"  class="nav__link">Produtos</a></li>
+          <li><a href="#encomendas" class="nav__link">Encomendas</a></li>
+          <li><a href="#revenda"   class="nav__link">Revenda</a></li>
+          <li><a href="#contato"   class="nav__link">Contato</a></li>
+        </ul>
+
+        <!-- Botão de WhatsApp dentro do menu mobile -->
+        <a href="#" class="btn btn--gold nav__cta" data-whatsapp="Olá! Vim pelo site e gostaria de fazer um pedido.">
+          <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+          Pedir no WhatsApp
+        </a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#" class="btn btn--gold btn--sm header__cta" data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet e gostaria de fazer um pedido.">
+          <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+          Fazer pedido
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Véu escuro atrás do menu do celular -->
+  <div class="nav-overlay" id="navOverlay" hidden></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <span class="tagline reveal">
+            <span class="tagline__dot"></span>
+            Feito à mão em Divinópolis · MG
+          </span>
+
+          <h1 class="hero__title reveal" data-delay="1">
+            O sabor que transforma
+            <span class="text-gold">momentos comuns</span>
+            em delícias
+          </h1>
+
+          <p class="hero__text reveal" data-delay="2">
+            Salgados congelados gourmet, bentô cakes, caseirinhos e doces artesanais
+            preparados com ingredientes selecionados e muito capricho — para a sua mesa,
+            sua festa ou o seu negócio.
+          </p>
+
+          <div class="hero__actions reveal" data-delay="3">
+            <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet e gostaria de fazer um pedido.">
+              <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+              Pedir no WhatsApp
+            </a>
+            <a href="#produtos" class="btn btn--outline btn--lg">
+              Ver os produtos
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero__badges reveal" data-delay="4">
+            <li><strong>100%</strong> artesanal</li>
+            <li><strong>Retirada</strong> ou entrega combinada</li>
+            <li><strong>Revenda</strong> com condições especiais</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" data-delay="2">
+          <div class="hero__frame">
+            <img src="assets/img/sobre-1.png" alt="Casal fundador da D'Licias Gourmet segurando os produtos"
+                 class="hero__img" loading="eager"
+                 onerror="this.closest('.hero__frame').classList.add('is-empty')">
+            <div class="hero__placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+              <span>Sua foto principal aqui</span>
+            </div>
+          </div>
+
+          <div class="hero__card hero__card--1">
+            <span class="hero__card-emoji">🧁</span>
+            <div>
+              <strong>Bentô Cake</strong>
+              <small>Bolinho na caixinha</small>
+            </div>
+          </div>
+
+          <div class="hero__card hero__card--2">
+            <span class="hero__card-emoji">🥟</span>
+            <div>
+              <strong>Salgados congelados</strong>
+              <small>Vários sabores e tamanhos</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#sobre" class="hero__scroll" aria-label="Rolar para baixo">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         FAIXA CORRIDA (MARQUEE)
+    ============================================================ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- ============================================================
+         SOBRE — com slide das fotos
+    ============================================================ -->
+    <section class="section section--sobre" id="sobre">
+      <div class="container grid-2">
+
+        <div class="sobre__media reveal">
+          <div class="slider" id="sobreSlider">
+            <div class="slider__viewport">
+
+              <figure class="slider__slide is-active">
+                <img src="assets/img/sobre-1.png" alt="Fundadores da D'Licias Gourmet apresentando os produtos artesanais" loading="lazy">
+              </figure>
+
+              <figure class="slider__slide">
+                <img src="assets/img/sobre-2.png" alt="Fundadores da D'Licias Gourmet" loading="lazy">
+              </figure>
+
+            </div>
+
+            <button class="slider__nav slider__nav--prev" aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="slider__nav slider__nav--next" aria-label="Próxima foto">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+
+            <div class="slider__dots" role="tablist" aria-label="Escolher foto">
+              <button class="slider__dot is-active" role="tab" aria-selected="true"  aria-label="Foto 1"></button>
+              <button class="slider__dot"           role="tab" aria-selected="false" aria-label="Foto 2"></button>
+            </div>
+          </div>
+
+          <div class="sobre__stamp" aria-hidden="true">
+            <span>Feito<br>com<br>amor</span>
+          </div>
+        </div>
+
+        <div class="sobre__content">
+          <span class="section__eyebrow reveal">Nossa história</span>
+          <h2 class="section__title reveal" data-delay="1">
+            Cada receita nasce de um <span class="text-gold">cuidado artesanal</span>
+          </h2>
+          <p class="section__lead reveal" data-delay="2">
+            A D'Licias Gourmet é um negócio de família, feito com as próprias mãos e
+            com muito carinho em cada detalhe. Trabalhamos com produção artesanal,
+            ingredientes selecionados e um acabamento caprichado — seja no salgadinho
+            da festa ou no bolo que vira presente.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature reveal" data-delay="3">
+              <span class="feature__icon">✦</span>
+              <div>
+                <strong>Ingredientes selecionados</strong>
+                <p>Recheios generosos, massa leve e sabor equilibrado em cada mordida.</p>
+              </div>
+            </li>
+            <li class="feature reveal" data-delay="4">
+              <span class="feature__icon">✦</span>
+              <div>
+                <strong>Sob encomenda e personalizado</strong>
+                <p>Aniversário, chá revelação, 15 anos, eventos cristãos e corporativos.</p>
+              </div>
+            </li>
+            <li class="feature reveal" data-delay="5">
+              <span class="feature__icon">✦</span>
+              <div>
+                <strong>Parceria com revendedores</strong>
+                <p>Condições especiais para quem quer vender os nossos produtos.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn--whats btn--lg reveal" data-delay="6" data-whatsapp="Olá! Conheci a D'Licias Gourmet pelo site e gostaria de saber mais sobre os produtos.">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Falar com a gente
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRODUTOS
+    ============================================================ -->
+    <section class="section section--produtos" id="produtos">
+      <div class="container">
+
+        <header class="section__head">
+          <span class="section__eyebrow reveal">Nosso cardápio</span>
+          <h2 class="section__title reveal" data-delay="1">
+            Uma vitrine de <span class="text-gold">delícias</span>
+          </h2>
+          <p class="section__lead section__lead--center reveal" data-delay="2">
+            Escolha o seu favorito e chame a gente no WhatsApp — a gente passa
+            sabores, tamanhos e valores na hora.
+          </p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="filters reveal" data-delay="3" role="tablist" aria-label="Filtrar produtos por categoria">
+          <!-- preenchido via JS -->
+        </div>
+
+        <!-- Grade -->
+        <div class="products" id="productsGrid" aria-live="polite">
+          <!-- preenchido via JS -->
+        </div>
+
+        <p class="products__empty" id="productsEmpty" hidden>Nenhum produto nesta categoria.</p>
+
+        <div class="products__note reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5M12 16h.01M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
+          <p>Sabores e tamanhos podem variar conforme a disponibilidade do dia.</p>
+        </div>
+
+        <div class="section__cta reveal">
+          <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Gostaria de saber o cardápio e os sabores disponíveis hoje.">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Consultar cardápio do dia
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMO FUNCIONA
+    ============================================================ -->
+    <section class="section section--passos">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__eyebrow reveal">Simples assim</span>
+          <h2 class="section__title reveal" data-delay="1">Como fazer o seu pedido</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal" data-delay="1">
+            <span class="step__num">01</span>
+            <h3>Escolha as delícias</h3>
+            <p>Navegue pelo cardápio e separe o que mais deu vontade.</p>
+          </li>
+          <li class="step reveal" data-delay="2">
+            <span class="step__num">02</span>
+            <h3>Chame no WhatsApp</h3>
+            <p>Fale com a gente para confirmar sabores, quantidades, valores e prazo.</p>
+          </li>
+          <li class="step reveal" data-delay="3">
+            <span class="step__num">03</span>
+            <h3>Retire ou combine a entrega</h3>
+            <p>Você retira no nosso endereço ou combinamos a entrega conforme a região.</p>
+          </li>
+        </ol>
+
+        <div class="section__cta reveal">
+          <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Quero fazer um pedido na D'Licias Gourmet.">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Começar meu pedido
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENCOMENDAS / DATAS ESPECIAIS
+    ============================================================ -->
+    <section class="section section--encomendas" id="encomendas">
+      <div class="container">
+        <div class="encomendas__box reveal">
+          <div class="encomendas__content">
+            <span class="section__eyebrow">Datas especiais</span>
+            <h2 class="section__title">
+              Doces <span class="text-gold">personalizados</span> para o seu momento
+            </h2>
+            <p class="section__lead">
+              Personalizamos brigadeiros, biscoitos e bolos com as cores, o tema e o
+              nome da sua festa. Conte a sua ideia que a gente transforma em doce.
+            </p>
+
+            <ul class="tags">
+              <li>15 anos</li>
+              <li>Chá revelação</li>
+              <li>Casamento</li>
+              <li>Aniversário infantil</li>
+              <li>Eventos cristãos</li>
+              <li>Corporativo</li>
+              <li>Lembrancinhas</li>
+              <li>Formatura</li>
+            </ul>
+
+            <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Gostaria de um orçamento para doces personalizados. O meu evento é:">
+              <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+              Pedir orçamento no WhatsApp
+            </a>
+          </div>
+
+          <div class="encomendas__media">
+            <div class="encomendas__frame">
+              <img src="assets/img/personalizado.png" alt="Caixa de brigadeiros e biscoitos personalizados de 15 anos da D'Licias Gourmet"
+                   loading="lazy" onerror="this.closest('.encomendas__frame').classList.add('is-empty')">
+              <div class="frame__placeholder" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+                <span>Foto dos personalizados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REVENDA
+    ============================================================ -->
+    <section class="section section--revenda" id="revenda">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__eyebrow reveal">Seja um parceiro</span>
+          <h2 class="section__title reveal" data-delay="1">
+            Revenda <span class="text-gold">D'Licias Gourmet</span>
+          </h2>
+          <p class="section__lead section__lead--center reveal" data-delay="2">
+            Quer uma renda extra ou ampliar o mix da sua loja, lanchonete ou padaria?
+            Trabalhamos com revenda dos nossos salgados congelados e doces.
+          </p>
+        </header>
+
+        <div class="revenda__grid">
+          <article class="card-benefit reveal" data-delay="1">
+            <span class="card-benefit__icon">📦</span>
+            <h3>Produto pronto para vender</h3>
+            <p>Salgados congelados que só precisam ser fritos ou assados na hora.</p>
+          </article>
+          <article class="card-benefit reveal" data-delay="2">
+            <span class="card-benefit__icon">💰</span>
+            <h3>Margem que compensa</h3>
+            <p>Condições especiais por volume e preços pensados para quem revende.</p>
+          </article>
+          <article class="card-benefit reveal" data-delay="3">
+            <span class="card-benefit__icon">🤝</span>
+            <h3>Suporte de perto</h3>
+            <p>Ajudamos com sugestões de venda, sabores que mais saem e reposição.</p>
+          </article>
+          <article class="card-benefit reveal" data-delay="4">
+            <span class="card-benefit__icon">⭐</span>
+            <h3>Qualidade que fideliza</h3>
+            <p>Padrão gourmet, acabamento caprichado e sabor que faz o cliente voltar.</p>
+          </article>
+        </div>
+
+        <div class="revenda__cta reveal">
+          <div class="revenda__cta-media">
+            <img src="assets/img/produtos/salgados-festa.jpg" alt="Variedade de salgados congelados prontos para revenda"
+                 loading="lazy" onerror="this.closest('.revenda__cta-media').remove()">
+          </div>
+          <p>Vamos conversar sobre a parceria?</p>
+          <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Tenho interesse em ser revendedor(a) da D'Licias Gourmet. Pode me passar as condições?">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Quero ser revendedor(a)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="section section--faq" id="faq">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <span class="section__eyebrow reveal">Dúvidas frequentes</span>
+          <h2 class="section__title reveal" data-delay="1">Perguntas que sempre nos fazem</h2>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>Vocês entregam?</summary>
+            <div class="faq__answer">
+              <p>Trabalhamos principalmente com retirada. A entrega pode ser combinada
+              conforme a região, o tamanho do pedido e a urgência — é só falar com a
+              gente pelo WhatsApp que avaliamos juntos.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>Com quanto tempo de antecedência devo encomendar?</summary>
+            <div class="faq__answer">
+              <p>Depende do produto e da quantidade. Bolos e itens personalizados pedem
+              mais antecedência; alguns itens podem ter pronta-entrega. Consulte a
+              disponibilidade pelo WhatsApp.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>Qual o pedido mínimo dos salgados congelados?</summary>
+            <div class="faq__answer">
+              <p>Os salgados são vendidos em porções e podem variar de tamanho e sabor.
+              Informe a quantidade desejada que passamos as opções e os valores.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>Como faço para revender os produtos?</summary>
+            <div class="faq__answer">
+              <p>É simples: fale com a gente pelo WhatsApp que explicamos as condições,
+              o mix de produtos e as quantidades para revenda.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>Quais são as formas de pagamento?</summary>
+            <div class="faq__answer">
+              <p>Combinamos no atendimento. Fale com a gente e informamos as opções
+              disponíveis no momento do pedido.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>Como devo conservar os salgados congelados?</summary>
+            <div class="faq__answer">
+              <p>Mantenha sempre no freezer até o momento do preparo. Frite ou asse
+              ainda congelados, sem descongelar antes — assim o resultado fica
+              crocante e o recheio no ponto.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="section__cta reveal">
+          <p class="section__cta-text">Ficou com outra dúvida?</p>
+          <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Tenho uma dúvida sobre os produtos da D'Licias Gourmet:">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Perguntar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTATO / LOCALIZAÇÃO
+    ============================================================ -->
+    <section class="section section--contato" id="contato">
+      <div class="container">
+        <header class="section__head">
+          <span class="section__eyebrow reveal">Fale com a gente</span>
+          <h2 class="section__title reveal" data-delay="1">
+            Estamos <span class="text-gold">pertinho</span> de você
+          </h2>
+          <p class="section__lead section__lead--center reveal" data-delay="2">
+            Atendimento rápido pelo WhatsApp — tire dúvidas, peça orçamento ou faça sua encomenda.
+          </p>
+        </header>
+
+        <div class="contato__grid">
+
+          <div class="contato__info">
+            <a class="contact-card reveal" data-delay="1" href="#" data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet.">
+              <span class="contact-card__icon">💬</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <span class="contact-card__value" data-phone-display>(37) 99906-1013</span>
+                <small>Toque para conversar agora</small>
+              </div>
+            </a>
+
+            <a class="contact-card reveal" data-delay="2" href="tel:+5533991373692">
+              <span class="contact-card__icon">📞</span>
+              <div>
+                <strong>Telefone alternativo</strong>
+                <span class="contact-card__value">(33) 99137-3692</span>
+                <small>Também atendemos por aqui</small>
+              </div>
+            </a>
+
+            <a class="contact-card reveal" data-delay="3" href="https://instagram.com/liciagourmet" target="_blank" rel="noopener">
+              <span class="contact-card__icon">📸</span>
+              <div>
+                <strong>Instagram</strong>
+                <span class="contact-card__value">@liciagourmet</span>
+                <small>Novidades e sabores do dia</small>
+              </div>
+            </a>
+
+            <div class="contact-card contact-card--static reveal" data-delay="4">
+              <span class="contact-card__icon">📍</span>
+              <div>
+                <strong>Onde estamos</strong>
+                <span class="contact-card__value">Divinópolis · MG</span>
+                <small>Endereço completo informado no atendimento</small>
+              </div>
+            </div>
+
+            <div class="hours reveal" data-delay="5">
+              <h3 class="hours__title">
+                <span class="hours__status" id="hoursStatus">Verificando…</span>
+                Horário de funcionamento
+              </h3>
+              <ul class="hours__list">
+                <li><span>Segunda a sexta</span><span>08h — 18h</span></li>
+                <li><span>Sábado</span><span>08h — 14h</span></li>
+                <li><span>Domingo e feriados</span><span>Fechado</span></li>
+              </ul>
+              <p class="hours__note">Encomendas pelo WhatsApp podem ser enviadas a qualquer hora — respondemos no horário comercial.</p>
+            </div>
+          </div>
+
+          <div class="contato__map reveal" data-delay="2">
+            <!-- TROQUE o "q=" abaixo pelo endereço exato quando definido -->
+            <iframe
+              title="Mapa da localização da D'Licias Gourmet em Divinópolis, MG"
+              src="https://www.google.com/maps?q=Divin%C3%B3polis%2C%20MG&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <div class="contato__map-badge">
+              <strong>Divinópolis · MG</strong>
+              <span>Endereço completo em breve</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section__cta reveal">
+          <p class="section__cta-text">Prefere falar direto com a gente?</p>
+          <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet e gostaria de falar com vocês.">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================ -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-final__box reveal">
+          <h2>Bateu vontade de uma delícia?</h2>
+          <p>Fale com a gente agora mesmo e garanta o seu pedido.</p>
+          <a href="#" class="btn btn--white btn--lg" data-whatsapp="Olá! Quero fazer um pedido na D'Licias Gourmet.">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="btn__icon icon-whats"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="#inicio" class="logo logo--footer">
+          <img src="assets/img/logo.png" alt="Logo D'Licias Gourmet" class="logo__img" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/img/logo.svg'}else{this.classList.add('is-missing')}">
+          <span class="logo__text">
+            <span class="logo__name">D'Licias</span>
+            <span class="logo__sub">Gourmet</span>
+          </span>
+        </a>
+        <p>Salgados congelados gourmet, bolos, doces e biscoitos artesanais feitos com carinho em Divinópolis/MG.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/liciagourmet" target="_blank" rel="noopener" aria-label="Instagram da D'Licias Gourmet">Instagram</a>
+          <a href="#" data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet." aria-label="WhatsApp da D'Licias Gourmet">WhatsApp</a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Links do rodapé">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#encomendas">Encomendas</a></li>
+          <li><a href="#revenda">Revenda</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="tel:+5537999061013">(37) 99906-1013</a></li>
+          <li><a href="tel:+5533991373692">(33) 99137-3692</a></li>
+          <li><a href="https://instagram.com/liciagourmet" target="_blank" rel="noopener">@liciagourmet</a></li>
+          <li>Divinópolis · MG</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>Atendimento</h3>
+        <ul>
+          <li>Seg. a sex. — 08h às 18h</li>
+          <li>Sábado — 08h às 14h</li>
+          <li>Domingo — Fechado</li>
+          <li>Retirada e entrega combinada</li>
+        </ul>
+        <a href="#" class="btn btn--whats btn--sm footer__cta" data-whatsapp="Olá! Vim pelo site e gostaria de fazer um pedido.">
+          Falar no WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="year">2026</span> D'Licias Gourmet. Todos os direitos reservados.</p>
+        <p class="footer__dev">
+          Criado por
+          <a href="#" id="devLink" target="_blank" rel="noopener">Yuri Augusto</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botões flutuantes -->
+  <a href="#" class="fab-whats" id="fabWhats" aria-label="Falar no WhatsApp"
+     data-whatsapp="Olá! Vim pelo site da D'Licias Gourmet e gostaria de mais informações.">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.8 5.5 2.1 7.9L0 32l8.3-2.2C10.6 31.2 13.3 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zm9.3 22.6c-.4 1.1-2.3 2.1-3.2 2.2-.8.1-1.8.2-2.9-.2-.7-.2-1.5-.5-2.6-1-4.6-2-7.6-6.6-7.8-6.9-.2-.3-1.8-2.4-1.8-4.6s1.1-3.3 1.6-3.7c.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1.1.8.4 1 1.4 3.4 1.5 3.6.1.2.2.5 0 .8-.1.3-.2.5-.4.8l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.4 1.2.4.2.6.3.7.4.1.3.1.9-.3 2z"/>
+    </svg>
+    <span class="fab-whats__label">Fale conosco</span>
+  </a>
+
+  <button class="fab-top" id="fabTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
