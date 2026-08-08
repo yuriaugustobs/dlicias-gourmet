@@ -168,7 +168,7 @@ const PRODUTOS = [
     imgs: [
       'assets/img/produtos/bolo-gelado-1.jpg'
     ],
-    desc: 'Bolo gelado, molhadinho e servido na marmita — prático para levar e ótimo para revender.'
+    desc: 'Bolo gelado, molhadinho e servido na marmita. Prático para levar e ótimo para revender.'
   },
   {
     nome: 'Torta Gelada no Pote',
