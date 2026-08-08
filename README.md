@@ -27,8 +27,9 @@ dlicias-gourmet/
 │   └── main.js             → comportamento (menu, filtros, slider, links)
 └── assets/
     ├── img/
-    │   ├── sobre-1.png     → foto usada no topo e no slide
-    │   ├── sobre-2.png     → segunda foto do slide
+    │   ├── sobre-1.png     → 1ª foto do slide (com os produtos)
+    │   ├── sobre-2.png     → 2ª foto do slide (caixa de doces)
+    │   ├── sobre-3.png     → 3ª foto do slide E foto do topo do site
     │   ├── personalizado.png → foto da seção "Datas especiais"
     │   ├── logo.svg        → logo provisória (trocar por logo.png)
     │   └── produtos/       → fotos dos produtos (já instaladas)

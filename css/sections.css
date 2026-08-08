@@ -114,8 +114,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Enquadra o casal e os produtos, cortando o excesso de fundo do topo */
-  object-position: center 62%;
+  /* Enquadra os rostos, cortando o excesso de fundo do topo */
+  object-position: center 30%;
 }
 
 .hero__frame::after {
