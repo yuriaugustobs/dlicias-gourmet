@@ -67,6 +67,12 @@
   .encomendas__media { order: -1; width: 100%; max-width: 380px; margin-inline: auto; }
   .encomendas__frame { aspect-ratio: 4 / 3; }
 
+  /* Sócia empilhada, com a foto em cima */
+  .socia__box { grid-template-columns: 1fr; text-align: center; }
+  .socia__media { width: 100%; max-width: 340px; margin: 0 auto 1.5rem; }
+  .socia__text { margin-inline: auto; }
+  .socia__quote { text-align: left; }
+
   .contato__grid { grid-template-columns: 1fr; }
   .contato__map, .contato__map iframe { min-height: 340px; }
 
@@ -195,6 +201,15 @@
   .marquee { padding: .8rem 0; }
   .marquee__track { gap: 2rem; }
   .marquee__item { font-size: 1.1rem; }
+
+  /* Sócia */
+  .socia__box { padding: 1.6rem 1.3rem 2rem; }
+  .socia__media { max-width: 260px; margin-bottom: 2.2rem; }
+  .socia__frame--main { border-radius: 130px 130px var(--raio-lg) var(--raio-lg); border-width: 5px; }
+  .socia__frame--small { right: -12px; bottom: -18px; width: 44%; }
+  .socia__badge { left: -6px; font-size: .64rem; padding: .32rem .9rem; }
+  .socia__quote { padding: 1rem 1.1rem 1rem 2.2rem; }
+  .socia__content .btn { width: 100%; max-width: 380px; }
 
   /* Sobre */
   .sobre__stamp {

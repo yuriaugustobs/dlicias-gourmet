@@ -283,6 +283,124 @@
 .feature p { font-size: .87rem; color: var(--tinta-suave); }
 
 /* ------------------------------------------------------------
+   SÓCIA
+------------------------------------------------------------ */
+.section--socia {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(247, 235, 192, .55), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(250, 231, 235, .9), transparent 55%),
+    var(--creme);
+}
+
+.socia__box {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--branco);
+  border-radius: var(--raio-xl);
+  box-shadow: var(--sombra-lg);
+  border: 1px solid rgba(217, 85, 123, .08);
+}
+
+/* Fotos */
+.socia__media { position: relative; }
+
+.socia__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--rosa-claro);
+}
+
+.socia__frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.socia__frame--main {
+  aspect-ratio: 3 / 4;
+  border-radius: 200px 200px var(--raio-lg) var(--raio-lg);
+  box-shadow: var(--sombra);
+  border: 6px solid var(--branco);
+}
+
+/* Segunda foto, menor, sobreposta no canto */
+.socia__frame--small {
+  position: absolute;
+  right: -18px;
+  bottom: -22px;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid var(--branco);
+  box-shadow: var(--sombra);
+}
+
+.socia__frame--small img { object-position: center 20%; }
+
+.socia__badge {
+  position: absolute;
+  top: 14px;
+  left: -10px;
+  z-index: 3;
+  padding: .38rem 1.1rem;
+  border-radius: 999px;
+  background: var(--grad-dourado);
+  color: #4A3608;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  box-shadow: var(--sombra-gold);
+}
+
+/* Texto */
+.socia__content .section__title { margin-bottom: .3rem; }
+
+.socia__role {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--rosa-forte);
+  margin-bottom: 1.5rem;
+}
+
+.socia__quote {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.1rem 1.4rem 1.1rem 2.6rem;
+  border-radius: var(--raio) var(--raio) var(--raio) 4px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(247, 235, 192, .5), transparent 60%),
+    var(--rosa-nevoa);
+  border-left: 3px solid var(--rosa-medio);
+  font-family: var(--font-titulo);
+  font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--rosa-escuro);
+}
+
+.socia__quote::before {
+  content: '\201C';
+  position: absolute;
+  top: .2rem;
+  left: .7rem;
+  font-family: var(--font-titulo);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--rosa-suave);
+}
+
+.socia__text {
+  font-size: .95rem;
+  color: var(--tinta-suave);
+  margin-bottom: 1rem;
+  max-width: 58ch;
+}
+
+.socia__content .btn { margin-top: .6rem; }
+
+/* ------------------------------------------------------------
    PRODUTOS
 ------------------------------------------------------------ */
 .section--produtos {

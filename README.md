@@ -30,6 +30,8 @@ dlicias-gourmet/
     │   ├── sobre-1.png     → 1ª foto do slide (com os produtos)
     │   ├── sobre-2.png     → 2ª foto do slide (caixa de doces)
     │   ├── sobre-3.png     → 3ª foto do slide E foto do topo do site
+    │   ├── marina-1.png    → foto principal da seção da sócia
+    │   ├── marina-2.png    → foto redonda menor da seção da sócia
     │   ├── personalizado.png → foto da seção "Datas especiais"
     │   ├── logo.svg        → logo provisória (trocar por logo.png)
     │   └── produtos/       → fotos dos produtos (já instaladas)
@@ -122,14 +124,20 @@ e no card 📍 "Onde estamos".
 
 1. **Início (hero)** — apresentação e chamada principal
 2. **Faixa corrida** — os produtos passando em destaque
-3. **Sobre** — história + slide com as fotos dos fundadores
-4. **Produtos** — vitrine com filtro por categoria
-5. **Como funciona** — os 3 passos do pedido
-6. **Encomendas** — doces personalizados para datas especiais
-7. **Revenda** — parceria com revendedores
-8. **Dúvidas** — perguntas frequentes
-9. **Contato** — WhatsApp, Instagram, horário e mapa
-10. **Rodapé** — links, contatos e créditos
+3. **Sobre** — história + slide com as 3 fotos dos fundadores
+4. **Nossa sócia** — apresentação da Marina Fernandes Santos
+5. **Produtos** — vitrine com filtro por categoria
+6. **Como funciona** — os 3 passos do pedido
+7. **Encomendas** — doces personalizados para datas especiais
+8. **Revenda** — parceria com revendedores
+9. **Dúvidas** — perguntas frequentes
+10. **Contato** — WhatsApp, Instagram, horário e mapa
+11. **Rodapé** — links, contatos e créditos
+
+> O texto da seção da Marina é uma **base para ela revisar** — foi escrito
+> a partir do papel dela no negócio, sem dados pessoais. Se ela quiser
+> incluir formação, tempo de casa ou uma frase própria, é só editar
+> direto no `index.html`, na seção com `id="socia"`.
 
 Todas as seções têm botão levando direto para o WhatsApp, com a mensagem já
 escrita conforme o assunto da seção.
