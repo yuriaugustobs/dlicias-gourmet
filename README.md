@@ -27,10 +27,10 @@ dlicias-gourmet/
 │   └── main.js             → comportamento (menu, filtros, slider, links)
 └── assets/
     ├── img/
-    │   ├── sobre-1.png     → 1ª do slide (traje social) e compartilhamento
-    │   ├── sobre-2.png     → 2ª do slide (com os produtos)
-    │   ├── sobre-3.png     → 3ª do slide (caixa de doces)
-    │   ├── sobre-4.png     → 4ª do slide (uniforme) e foto do topo do site
+    │   ├── sobre-1.png     → foto do topo do site e do compartilhamento
+    │   ├── sobre-2.png     → 1ª do slide (com os produtos)
+    │   ├── sobre-3.png     → 2ª do slide (caixa de doces)
+    │   ├── sobre-4.png     → 3ª do slide (uniforme)
     │   ├── marina-1.png    → foto principal da seção da sócia
     │   ├── marina-2.png    → foto redonda menor da seção da sócia
     │   ├── personalizado.png → foto da seção "Datas especiais"
