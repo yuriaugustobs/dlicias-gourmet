@@ -187,6 +187,15 @@
   .logo__sub { font-size: .56rem; letter-spacing: .3em; }
 
   /* Hero */
+  /* A chamada quebra em duas linhas: sem o pontinho fica centralizada */
+  .tagline {
+    font-size: .72rem;
+    padding: .5rem 1.15rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .tagline__dot { display: none; }
+
   .hero__title { font-size: clamp(2rem, 8.5vw, 2.6rem); }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { width: 100%; }
