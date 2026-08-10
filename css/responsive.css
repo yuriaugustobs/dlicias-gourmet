@@ -333,7 +333,10 @@
   .hero__title { font-size: 1.85rem; }
   .hero__card { display: none; }
 
-  .logo__sub { display: none; }
+  /* "GOURMET" continua visível: só encolhe para caber */
+  .logo__sub { font-size: .5rem; letter-spacing: .22em; }
+  .logo__img { width: 40px; height: 40px; }
+  .logo__name { font-size: 1.2rem; }
 
   .section__title { font-size: 1.65rem; }
   .tagline { font-size: .72rem; }
