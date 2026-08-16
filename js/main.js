@@ -46,27 +46,68 @@
   const secoes = $$('section[id]');
   const links  = $$('.nav__link');
 
-  function marcarSecaoAtiva() {
-    const pos = window.scrollY + (window.innerHeight * 0.3);
-    let atual = '';
+  /* Só as seções que aparecem no menu contam para o destaque. Sem esse
+     filtro, ao passar por uma seção sem link (a da sócia, por exemplo)
+     o menu inteiro ficava sem nenhum item marcado. */
+  const idsDoMenu = new Set(
+    links.map(l => (l.getAttribute('href') || '').replace('#', ''))
+  );
 
-    secoes.forEach(sec => {
-      if (pos >= sec.offsetTop) atual = sec.id;
+  /* A posição de cada seção fica guardada aqui. Ler "offsetTop" a cada
+     rolagem obrigava o navegador a recalcular o layout inteiro e travava
+     a rolagem; agora medimos só quando a página muda de tamanho. */
+  let topoSecoes = [];
+  let secaoAtiva = null;
+
+  function medirSecoes() {
+    topoSecoes = secoes
+      .filter(sec => idsDoMenu.has(sec.id))
+      .map(sec => ({ id: sec.id, topo: sec.offsetTop }));
+  }
+
+  function marcarSecaoAtiva(y) {
+    const pos = y + (window.innerHeight * 0.3);
+
+    // Fica no primeiro item enquanto não passamos de nenhuma seção
+    let atual = topoSecoes.length ? topoSecoes[0].id : '';
+
+    topoSecoes.forEach(sec => {
+      if (pos >= sec.topo) atual = sec.id;
     });
+
+    if (atual === secaoAtiva) return;   // nada mudou: não mexe no DOM
+    secaoAtiva = atual;
 
     links.forEach(l => {
       l.classList.toggle('is-active', l.getAttribute('href') === `#${atual}`);
     });
   }
 
+  /* A rolagem só anota a posição. O trabalho visual acontece no quadro
+     seguinte, junto com a pintura do navegador. */
+  let aguardandoQuadro = false;
+
   function onScroll() {
-    const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 40);
-    fabTop.classList.toggle('is-visible', y > 600);
-    marcarSecaoAtiva();
+    if (aguardandoQuadro) return;
+    aguardandoQuadro = true;
+
+    requestAnimationFrame(() => {
+      aguardandoQuadro = false;
+      const y = window.scrollY;
+      header.classList.toggle('is-scrolled', y > 40);
+      fabTop.classList.toggle('is-visible', y > 600);
+      marcarSecaoAtiva(y);
+    });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Ao girar o celular ou redimensionar a janela, as posições mudam
+  let timerMedida = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(timerMedida);
+    timerMedida = setTimeout(medirSecoes, 200);
+  }, { passive: true });
 
   /* --- Menu mobile --- */
   function fecharMenu() {
@@ -115,13 +156,17 @@
      3. ANIMAÇÃO DE ENTRADA
      ========================================================== */
 
+  /* Basta o elemento encostar na área visível para ele aparecer.
+     Antes era exigida uma fatia de 12% dele na tela, e blocos baixos
+     — como o aviso no fim do cardápio — nunca chegavam a essa marca
+     e ficavam invisíveis para sempre. */
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(e => {
       if (!e.isIntersecting) return;
       e.target.classList.add('is-visible');
       observador.unobserve(e.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
 
   function observarReveals(ctx = document) {
     $$('.reveal', ctx).forEach(el => {
@@ -261,8 +306,10 @@
           <h3 class="product__name">${esc(p.nome)}</h3>
           <p class="product__desc">${esc(p.desc)}</p>
 
+          <!-- O rótulo começa com o texto que aparece no botão: quem navega
+               por comando de voz fala "pedir no WhatsApp" e é atendido. -->
           <a class="product__cta" href="${linkWhats(msg)}" target="_blank" rel="noopener"
-             aria-label="Pedir ${esc(p.nome)} pelo WhatsApp">
+             aria-label="Pedir no WhatsApp: ${esc(p.nome)}">
             ${SVG_WHATS}
             Pedir no WhatsApp
           </a>
@@ -469,7 +516,16 @@
     atualizarStatusHorario();
     prepararLinksWhats();
     observarReveals();
-    onScroll();
+
+    // A medição das seções sai do caminho crítico: acontece no quadro
+    // seguinte, quando a página já apareceu para quem está visitando.
+    requestAnimationFrame(() => {
+      medirSecoes();
+      onScroll();
+    });
+
+    // As fotos entram carregando e empurram o conteúdo: remedimos ao final
+    window.addEventListener('load', medirSecoes, { once: true });
 
     // Reavalia o status de aberto/fechado a cada minuto
     setInterval(atualizarStatusHorario, 60000);

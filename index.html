@@ -14,22 +14,27 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="D'Lícias Gourmet — Casa de Salgados e Confeitaria com Afeto">
   <meta property="og:description" content="Salgados congelados, coxinhas, bentô cake, caseirinhos e doces artesanais em Divinópolis/MG. Encomende pelo WhatsApp.">
-  <meta property="og:image" content="assets/img/sobre-1.png">
+  <meta property="og:image" content="assets/img/sobre-1.jpg">
   <meta property="og:locale" content="pt_BR">
 
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="apple-touch-icon" href="assets/img/logo.svg">
 
-  <!-- Tipografia -->
+  <!-- Tipografia. As fontes carregam sem bloquear a primeira pintura:
+       o navegador usa a fonte do sistema e troca assim que o arquivo chega. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  </noscript>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Foto principal: começa a baixar junto com o HTML -->
+  <link rel="preload" as="image" href="assets/img/sobre-1.jpg" fetchpriority="high">
+
+  <!-- Estilos (arquivo único: menos idas e voltas até a primeira pintura) -->
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
@@ -43,7 +48,7 @@
     <div class="container header__inner">
 
       <a href="#inicio" class="logo" aria-label="D'Licias Gourmet - página inicial">
-        <img src="assets/img/logo.png" alt="Logo D'Licias Gourmet" class="logo__img" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/img/logo.svg'}else{this.classList.add('is-missing')}">
+        <img src="assets/img/logo.svg" alt="Logo D'Licias Gourmet" class="logo__img" width="200" height="200" onerror="this.classList.add('is-missing')">
         <span class="logo__text">
           <span class="logo__name">D'Licias</span>
           <span class="logo__sub">Gourmet</span>
@@ -133,7 +138,7 @@
 
         <div class="hero__visual reveal" data-delay="2">
           <div class="hero__frame">
-            <img src="assets/img/sobre-1.png" alt="Casal fundador da D'Lícias Gourmet"
+            <img src="assets/img/sobre-1.jpg" width="1000" height="1333" alt="Casal fundador da D'Lícias Gourmet"
                  class="hero__img" loading="eager"
                  onerror="this.closest('.hero__frame').classList.add('is-empty')">
             <div class="hero__placeholder" aria-hidden="true">
@@ -184,15 +189,15 @@
             <div class="slider__viewport">
 
               <figure class="slider__slide is-active">
-                <img src="assets/img/sobre-2.png" alt="Fundadores da D'Lícias Gourmet apresentando bolo gelado, torta no pote e brigadeiros" loading="lazy">
+                <img src="assets/img/sobre-2.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet apresentando bolo gelado, torta no pote e brigadeiros" loading="lazy">
               </figure>
 
               <figure class="slider__slide">
-                <img src="assets/img/sobre-3.png" alt="Fundadores da D'Lícias Gourmet com uma caixa de doces personalizados" loading="lazy">
+                <img src="assets/img/sobre-3.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet com uma caixa de doces personalizados" loading="lazy">
               </figure>
 
               <figure class="slider__slide">
-                <img src="assets/img/sobre-4.png" alt="Fundadores da D'Lícias Gourmet de uniforme" loading="lazy">
+                <img src="assets/img/sobre-4.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet de uniforme" loading="lazy">
               </figure>
 
             </div>
@@ -272,13 +277,13 @@
 
           <div class="socia__media">
             <div class="socia__frame socia__frame--main">
-              <img src="assets/img/marina-1.png" alt="Marina Fernandes Santos, sócia da D'Licias Gourmet"
+              <img src="assets/img/marina-1.jpg" width="1000" height="1250" alt="Marina Fernandes Santos, sócia da D'Licias Gourmet"
                    loading="lazy" onerror="this.closest('.socia__frame').classList.add('is-empty')">
               <div class="frame__placeholder" aria-hidden="true"><span>Foto da Marina</span></div>
             </div>
 
             <div class="socia__frame socia__frame--small">
-              <img src="assets/img/marina-2.png" alt="Marina Fernandes Santos"
+              <img src="assets/img/marina-2.jpg" width="572" height="747" alt="Marina Fernandes Santos"
                    loading="lazy" onerror="this.closest('.socia__frame').remove()">
             </div>
 
@@ -423,7 +428,7 @@
 
           <div class="encomendas__media">
             <div class="encomendas__frame">
-              <img src="assets/img/personalizado.png" alt="Caixa de brigadeiros e biscoitos personalizados de 15 anos da D'Licias Gourmet"
+              <img src="assets/img/personalizado.jpg" width="581" height="576" alt="Caixa de brigadeiros e biscoitos personalizados de 15 anos da D'Licias Gourmet"
                    loading="lazy" onerror="this.closest('.encomendas__frame').classList.add('is-empty')">
               <div class="frame__placeholder" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
@@ -476,7 +481,7 @@
 
         <div class="revenda__cta reveal">
           <div class="revenda__cta-media">
-            <img src="assets/img/produtos/salgados-festa.jpg" alt="Variedade de salgados congelados prontos para revenda"
+            <img src="assets/img/produtos/salgados-festa.jpg" width="760" height="760" alt="Variedade de salgados congelados prontos para revenda"
                  loading="lazy" onerror="this.closest('.revenda__cta-media').remove()">
           </div>
           <p>Vamos conversar sobre a parceria?</p>
@@ -676,7 +681,7 @@
 
       <div class="footer__brand">
         <a href="#inicio" class="logo logo--footer">
-          <img src="assets/img/logo.png" alt="Logo D'Licias Gourmet" class="logo__img" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='assets/img/logo.svg'}else{this.classList.add('is-missing')}">
+          <img src="assets/img/logo.svg" alt="Logo D'Licias Gourmet" class="logo__img" width="200" height="200" onerror="this.classList.add('is-missing')">
           <span class="logo__text">
             <span class="logo__name">D'Licias</span>
             <span class="logo__sub">Gourmet</span>

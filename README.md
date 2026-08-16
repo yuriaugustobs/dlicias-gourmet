@@ -17,24 +17,23 @@ hospedagem (Hostinger, Netlify, Vercel, GitHub Pages etc.).
 ```
 dlicias-gourmet/
 ├── index.html              → todo o conteúdo do site
+├── .htaccess               → cache e segurança (hospedagens Apache)
 ├── css/
-│   ├── base.css            → cores, fontes, reset e utilitários
-│   ├── components.css      → botões, header, cards, slider
-│   ├── sections.css        → cada seção do site
-│   └── responsive.css      → celular, tablet e telas grandes
+│   └── estilo.css          → todo o visual: cores, componentes,
+│                             seções e responsivo, em um arquivo só
 ├── js/
 │   ├── data.js             → ⭐ contatos, horários e lista de produtos
 │   └── main.js             → comportamento (menu, filtros, slider, links)
 └── assets/
     ├── img/
-    │   ├── sobre-1.png     → foto do topo do site e do compartilhamento
-    │   ├── sobre-2.png     → 1ª do slide (com os produtos)
-    │   ├── sobre-3.png     → 2ª do slide (caixa de doces)
-    │   ├── sobre-4.png     → 3ª do slide (uniforme)
-    │   ├── marina-1.png    → foto principal da seção da sócia
-    │   ├── marina-2.png    → foto redonda menor da seção da sócia
-    │   ├── personalizado.png → foto da seção "Datas especiais"
-    │   ├── logo.svg        → logo provisória (trocar por logo.png)
+    │   ├── sobre-1.jpg     → foto do topo do site e do compartilhamento
+    │   ├── sobre-2.jpg     → 1ª do slide (com os produtos)
+    │   ├── sobre-3.jpg     → 2ª do slide (caixa de doces)
+    │   ├── sobre-4.jpg     → 3ª do slide (uniforme)
+    │   ├── marina-1.jpg    → foto principal da seção da sócia
+    │   ├── marina-2.jpg    → foto redonda menor da seção da sócia
+    │   ├── personalizado.jpg → foto da seção "Datas especiais"
+    │   ├── logo.svg        → logo do site
     │   └── produtos/       → fotos dos produtos (já instaladas)
     └── products/           → arquivos originais enviados (backup)
 ```
@@ -66,9 +65,12 @@ sozinho a partir de `EMPRESA.horarios`.
 
 ## Como colocar a logo oficial
 
-Salve a logo como **`assets/img/logo.png`** (fundo transparente, algo em torno de
-400×400px). O site troca automaticamente — enquanto ela não existir, aparece a
-logo provisória em SVG.
+A logo em uso é a **`assets/img/logo.svg`**. Para trocar por uma imagem nova,
+salve o arquivo em `assets/img/` e ajuste os caminhos no `index.html`: procure
+por `logo.svg` — aparece em quatro lugares (o ícone da aba, o ícone do celular,
+a logo do topo e a do rodapé).
+
+Se for usar PNG, prefira fundo transparente e algo em torno de 400×400px.
 
 ---
 
@@ -106,8 +108,16 @@ sem imagem quebrada. Se nenhuma carregar, aparece o fundo decorado com o
 emoji do produto.
 
 Enquanto não houver foto, o card mostra um fundo decorado com o emoji — o site
-continua bonito e sem imagem quebrada. Ideal: fotos quadradas ou 4:3, com no
-máximo ~400 KB cada.
+continua bonito e sem imagem quebrada.
+
+> ⚠️ **Tamanho das fotos importa muito.** As fotos do site já foram reduzidas
+> para o tamanho em que realmente aparecem na tela — as fotos de produto têm
+> no máximo 900px de largura e as fotos grandes das seções, 1000px. Foto que
+> sai do celular costuma ter 4000px e pesa vários megabytes: no 4G, isso faz
+> o cliente esperar e desistir. Antes de subir uma foto nova, **reduza a
+> largura para ~900px e salve em JPEG com qualidade 75-80** (o site
+> [squoosh.app](https://squoosh.app) faz isso no navegador, de graça).
+> Cada foto deve ficar abaixo de ~150 KB.
 
 ### Para adicionar um produto novo
 
@@ -158,6 +168,30 @@ escrita conforme o assunto da seção.
 - Respeita `prefers-reduced-motion` de quem tem sensibilidade a movimento
 - Acessibilidade: navegação por teclado, `aria-label` e foco visível
 - Sem dependências externas além das fontes do Google Fonts
+
+### Cuidados com a velocidade
+
+O que já está feito para o site abrir rápido — vale manter ao mexer no código:
+
+- **Fotos no tamanho certo.** A página inteira pesa ~6 MB (antes eram 18 MB).
+  Veja o aviso na seção de fotos dos produtos.
+- **Um arquivo de estilo só.** Cada arquivo a mais no `<head>` atrasa o
+  momento em que a página aparece.
+- **As fontes não travam a exibição.** O texto aparece na hora com a fonte do
+  sistema e troca sozinho quando a fonte do Google chega.
+- **Toda foto tem `width` e `height` no HTML.** É o que impede o conteúdo de
+  "pular" enquanto as imagens carregam. Ao trocar uma foto por outra de
+  proporção diferente, atualize esses números.
+- **A rolagem não recalcula o layout.** As posições das seções ficam guardadas
+  em memória e só são medidas de novo quando a janela muda de tamanho.
+
+### Cache e segurança (`.htaccess`)
+
+O arquivo `.htaccess` liga compressão, cache longo das imagens e os cabeçalhos
+de segurança. Ele **só funciona em hospedagem Apache** (Hostinger, cPanel e
+parecidas). Em Netlify, Vercel ou GitHub Pages o arquivo é ignorado — nessas
+plataformas o cache já vem configurado, mas os cabeçalhos de segurança
+precisam ser declarados no painel ou no arquivo de configuração de cada uma.
 
 ---
 
