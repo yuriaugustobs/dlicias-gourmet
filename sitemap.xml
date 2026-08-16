@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mapa do site para o Google. Como é uma página só, com âncoras para
+  as seções, aqui vai o endereço principal. A data abaixo é a da
+  última atualização de conteúdo — vale rever quando mexer no site.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dliciasgourmet.com.br/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

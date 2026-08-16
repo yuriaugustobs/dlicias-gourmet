@@ -1,0 +1,11 @@
+# Este arquivo diz aos buscadores (Google, Bing) o que eles podem ler.
+# Aqui liberamos o site inteiro, porque tudo é público.
+#
+# Ele também precisa existir por outro motivo: sem o arquivo, a
+# hospedagem devolvia uma página de anúncio no lugar dele, e o Google
+# reclamava de "robots.txt inválido".
+
+User-agent: *
+Allow: /
+
+Sitemap: https://dliciasgourmet.com.br/sitemap.xml

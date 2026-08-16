@@ -35,9 +35,22 @@
 
 # ------------------------------------------------------------
 # CACHE DO NAVEGADOR
-# Quem já visitou não baixa tudo de novo. As fotos e os arquivos
-# de estilo ficam guardados por um ano; o HTML sempre é conferido,
-# para que uma atualização do site apareça na hora.
+# ------------------------------------------------------------
+# A regra depende de o arquivo poder mudar sem mudar de nome:
+#
+#   Fotos e fontes  → guardar por 1 ano. Trocar uma foto na prática
+#                     significa subir um arquivo novo, então não há
+#                     risco de alguém ficar preso na versão velha.
+#
+#   CSS e JS        → guardar, mas CONFERIR a cada visita. Eles têm
+#                     nome fixo (estilo.css, main.js): com cache
+#                     longo, quem já visitou o site ficaria preso na
+#                     versão antiga por um ano, sem receber correção
+#                     nenhuma. Com "no-cache" o navegador pergunta se
+#                     mudou e, se não mudou, o servidor responde "304"
+#                     sem reenviar o arquivo — rápido e sempre certo.
+#
+#   HTML            → sempre conferido, pelo mesmo motivo.
 # ------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -48,24 +61,23 @@
   ExpiresByType image/svg+xml           "access plus 1 year"
   ExpiresByType image/x-icon            "access plus 1 year"
 
-  ExpiresByType text/css                "access plus 1 year"
-  ExpiresByType application/javascript  "access plus 1 year"
-  ExpiresByType text/javascript         "access plus 1 year"
-
   ExpiresByType font/woff2              "access plus 1 year"
   ExpiresByType font/woff               "access plus 1 year"
 
+  ExpiresByType text/css                "access plus 0 seconds"
+  ExpiresByType application/javascript  "access plus 0 seconds"
+  ExpiresByType text/javascript         "access plus 0 seconds"
   ExpiresByType text/html               "access plus 0 seconds"
 </IfModule>
 
 <IfModule mod_headers.c>
-  # Arquivos que não mudam de nome: cache longo
-  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|css|js|woff2?)$">
+  # Fotos e fontes: o nome muda quando o conteúdo muda
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|woff2?)$">
     Header set Cache-Control "public, max-age=31536000"
   </FilesMatch>
 
-  # O HTML é sempre reconferido, para as mudanças aparecerem logo
-  <FilesMatch "\.html$">
+  # Código e HTML: nome fixo, então tem de ser reconferido sempre
+  <FilesMatch "\.(html|css|js)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
 
