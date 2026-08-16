@@ -19,6 +19,8 @@
 <IfModule mod_mime.c>
   AddType image/webp .webp
   AddType image/svg+xml .svg
+  # As fontes já vêm compactadas de fábrica; só precisam do tipo certo
+  AddType font/woff2 .woff2
 </IfModule>
 
 # ------------------------------------------------------------
@@ -86,9 +88,10 @@
   # Isola a janela do site de outras abas
   Header always set Cross-Origin-Opener-Policy "same-origin"
 
-  # De onde o site pode carregar cada coisa. 'unsafe-inline' é
-  # necessário porque há estilos e pequenos scripts dentro do HTML.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+  # De onde o site pode carregar cada coisa. Como as fontes agora ficam
+  # aqui mesmo, o único domínio de fora é o do mapa. O 'unsafe-inline'
+  # é necessário por causa dos "onerror" das fotos dentro do HTML.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 # ------------------------------------------------------------

@@ -17,7 +17,8 @@ hospedagem (Hostinger, Netlify, Vercel, GitHub Pages etc.).
 ```
 dlicias-gourmet/
 ├── index.html              → todo o conteúdo do site
-├── .htaccess               → cache e segurança (hospedagens Apache)
+├── .htaccess               → cache e segurança (Apache/Hostinger)
+├── .gitattributes          → força quebras de linha Unix no .htaccess
 ├── css/
 │   └── estilo.css          → todo o visual: cores, componentes,
 │                             seções e responsivo, em um arquivo só
@@ -36,6 +37,7 @@ dlicias-gourmet/
     │   ├── logo.svg        → logo do site
     │   └── produtos/       → fotos dos produtos (já instaladas)
     │                         cada foto tem .jpg e .webp com o mesmo nome
+    ├── fontes/             → Montserrat e Cormorant (não vêm do Google)
     └── products/           → arquivos originais enviados (backup)
 ```
 
@@ -188,7 +190,8 @@ escrita conforme o assunto da seção.
 - Animações de entrada ao rolar a página
 - Respeita `prefers-reduced-motion` de quem tem sensibilidade a movimento
 - Acessibilidade: navegação por teclado, `aria-label` e foco visível
-- Sem dependências externas além das fontes do Google Fonts
+- **Zero dependências externas** — nada de CDN, framework ou Google Fonts.
+  A única coisa que vem de fora é o mapa da seção de contato
 
 ### Cuidados com a velocidade
 
@@ -198,13 +201,29 @@ O que já está feito para o site abrir rápido — vale manter ao mexer no cód
   eram 18,5 MB). Veja o aviso na seção de fotos dos produtos.
 - **Um arquivo de estilo só.** Cada arquivo a mais no `<head>` atrasa o
   momento em que a página aparece.
-- **As fontes não travam a exibição.** O texto aparece na hora com a fonte do
-  sistema e troca sozinho quando a fonte do Google chega.
+- **As fontes ficam no próprio site** (`assets/fontes/`), não no Google.
+  Buscá-las lá fora custava duas viagens em sequência e fazia o texto mudar
+  de aparência no meio do carregamento. O site não faz **nenhuma** requisição
+  a servidores de fora (o mapa do Google é a única exceção, e é um quadro
+  separado). Se precisar trocar de fonte, veja a seção sobre fontes abaixo.
 - **Toda foto tem `width` e `height` no HTML.** É o que impede o conteúdo de
   "pular" enquanto as imagens carregam. Ao trocar uma foto por outra de
   proporção diferente, atualize esses números.
 - **A rolagem não recalcula o layout.** As posições das seções ficam guardadas
   em memória e só são medidas de novo quando a janela muda de tamanho.
+
+### Sobre as fontes
+
+As duas fontes do site (**Montserrat** no texto e **Cormorant Garamond** nos
+títulos) ficam em `assets/fontes/`, baixadas do Google uma vez e guardadas
+aqui. São só os pesos realmente usados e só os caracteres do português —
+por isso são 9 arquivos e não 45.
+
+Para trocar de fonte no futuro, o caminho é: pegar a fonte no Google Fonts,
+baixar os `.woff2`, colocá-los nessa pasta e ajustar `assets/fontes/fontes.css`
+e as duas variáveis no topo de `css/estilo.css` (`--font-titulo` e
+`--font-corpo`). Voltar a apontar para o Google funcionaria, mas deixaria o
+site perceptivelmente mais lento no celular.
 
 ### Cache e segurança (`.htaccess`)
 

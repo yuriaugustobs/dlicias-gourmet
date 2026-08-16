@@ -1,0 +1,16 @@
+# O Apache não lê o .htaccess com quebras de linha do Windows (CRLF):
+# ele falha ou ignora diretivas em silêncio. O Git no Windows converte
+# para CRLF por padrão, então aqui forçamos LF neste arquivo.
+.htaccess text eol=lf
+
+# Mesma razão para os arquivos servidos ao navegador
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+
+# Imagens são binárias: o Git nunca deve tentar converter nada nelas
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.svg  text eol=lf
