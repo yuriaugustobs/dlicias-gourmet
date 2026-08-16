@@ -35,6 +35,7 @@ dlicias-gourmet/
     │   ├── personalizado.jpg → foto da seção "Datas especiais"
     │   ├── logo.svg        → logo do site
     │   └── produtos/       → fotos dos produtos (já instaladas)
+    │                         cada foto tem .jpg e .webp com o mesmo nome
     └── products/           → arquivos originais enviados (backup)
 ```
 
@@ -119,6 +120,26 @@ continua bonito e sem imagem quebrada.
 > [squoosh.app](https://squoosh.app) faz isso no navegador, de graça).
 > Cada foto deve ficar abaixo de ~150 KB.
 
+### Toda foto precisa de uma versão `.webp` ao lado
+
+O site entrega as fotos em **WebP** — um formato mais novo, que ocupa cerca
+de um terço a menos que o JPEG com a mesma aparência. Quem usa navegador
+antigo recebe o JPEG automaticamente, sem perceber diferença.
+
+Para isso funcionar, **cada `foto.jpg` precisa ter uma `foto.webp` do lado**,
+com exatamente o mesmo nome. O site monta o caminho do WebP trocando a
+extensão — não existe lista de exceções em lugar nenhum.
+
+Ao adicionar uma foto nova:
+
+1. Salve a `.jpg` em `assets/img/produtos/` (como sempre)
+2. Gere a `.webp` a partir dela — o [squoosh.app](https://squoosh.app) exporta
+   nos dois formatos; escolha "WebP", qualidade 80
+3. Salve as duas no mesmo lugar, com o mesmo nome
+
+Se esquecer o `.webp`, a foto **continua aparecendo** (o navegador cai no
+JPEG), só perde a economia. Nada quebra.
+
 ### Para adicionar um produto novo
 
 Copie um bloco inteiro da lista `PRODUTOS`, cole no fim e troque os dados.
@@ -173,8 +194,8 @@ escrita conforme o assunto da seção.
 
 O que já está feito para o site abrir rápido — vale manter ao mexer no código:
 
-- **Fotos no tamanho certo.** A página inteira pesa ~6 MB (antes eram 18 MB).
-  Veja o aviso na seção de fotos dos produtos.
+- **Fotos no tamanho certo e em WebP.** A página inteira pesa ~4 MB (antes
+  eram 18,5 MB). Veja o aviso na seção de fotos dos produtos.
 - **Um arquivo de estilo só.** Cada arquivo a mais no `<head>` atrasa o
   momento em que a página aparece.
 - **As fontes não travam a exibição.** O texto aparece na hora com a fonte do

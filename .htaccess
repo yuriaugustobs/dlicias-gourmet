@@ -1,10 +1,25 @@
 # ============================================================
-# D'LICIAS GOURMET — CONFIGURAÇÃO DO SERVIDOR (Apache)
+# D'LICIAS GOURMET — CONFIGURAÇÃO DO SERVIDOR
 # ------------------------------------------------------------
-# Vale para hospedagens Apache (Hostinger, cPanel e similares).
-# Em Netlify, Vercel ou GitHub Pages este arquivo é ignorado —
-# lá o cache já vem configurado pela própria plataforma.
+# O site está hospedado na Hostinger, que usa Apache — é aqui
+# que ficam o cache, a compressão e a segurança.
+#
+# IMPORTANTE: este arquivo precisa ir junto para o servidor.
+# Ele começa com ponto, então alguns programas de FTP o escondem:
+# procure a opção "mostrar arquivos ocultos" antes de enviar.
+#
+# Em Netlify, Vercel ou GitHub Pages ele seria ignorado.
 # ============================================================
+
+# ------------------------------------------------------------
+# TIPOS DE ARQUIVO
+# Servidores mais antigos não conhecem o WebP e acabam entregando
+# a foto como "arquivo genérico" — aí o navegador não a exibe.
+# ------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+</IfModule>
 
 # ------------------------------------------------------------
 # COMPRESSÃO

@@ -33,6 +33,13 @@
     return d.innerHTML;
   }
 
+  /** Caminho da versão WebP de uma foto (mesmo nome, outra extensão).
+      Toda foto em assets/img tem a sua — veja o README. Se por algum
+      motivo faltar, o navegador simplesmente usa o JPEG. */
+  function versaoWebp(caminho) {
+    return caminho.replace(/\.jpe?g$/i, '.webp');
+  }
+
   /* ==========================================================
      2. HEADER, MENU E NAVEGAÇÃO
      ========================================================== */
@@ -245,10 +252,13 @@
     }
 
     const slides = fotos.map((src, i) => `
-      <img src="${src}" alt="${esc(p.nome)}${fotos.length > 1 ? ` — foto ${i + 1}` : ''}"
-           class="pgal__img${i === 0 ? ' is-active' : ''}"
-           loading="${i === 0 ? 'lazy' : 'lazy'}"
-           onerror="this.remove()">
+      <picture>
+        <source srcset="${versaoWebp(src)}" type="image/webp">
+        <img src="${src}" alt="${esc(p.nome)}${fotos.length > 1 ? ` — foto ${i + 1}` : ''}"
+             class="pgal__img${i === 0 ? ' is-active' : ''}"
+             loading="lazy"
+             onerror="this.parentNode.remove()">
+      </picture>
     `).join('');
 
     // Uma foto só: sem controles

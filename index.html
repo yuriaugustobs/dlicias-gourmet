@@ -30,8 +30,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap">
   </noscript>
 
-  <!-- Foto principal: começa a baixar junto com o HTML -->
-  <link rel="preload" as="image" href="assets/img/sobre-1.jpg" fetchpriority="high">
+  <!-- Foto principal: começa a baixar junto com o HTML. O "type" evita
+       que navegador sem suporte a WebP baixe a foto duas vezes. -->
+  <link rel="preload" as="image" href="assets/img/sobre-1.webp" type="image/webp" fetchpriority="high">
 
   <!-- Estilos (arquivo único: menos idas e voltas até a primeira pintura) -->
   <link rel="stylesheet" href="css/estilo.css">
@@ -138,9 +139,12 @@
 
         <div class="hero__visual reveal" data-delay="2">
           <div class="hero__frame">
-            <img src="assets/img/sobre-1.jpg" width="1000" height="1333" alt="Casal fundador da D'Lícias Gourmet"
-                 class="hero__img" loading="eager"
-                 onerror="this.closest('.hero__frame').classList.add('is-empty')">
+            <picture>
+              <source srcset="assets/img/sobre-1.webp" type="image/webp">
+              <img src="assets/img/sobre-1.jpg" width="1000" height="1333" alt="Casal fundador da D'Lícias Gourmet"
+                   class="hero__img" loading="eager"
+                   onerror="this.closest('.hero__frame').classList.add('is-empty')">
+            </picture>
             <div class="hero__placeholder" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
               <span>Sua foto principal aqui</span>
@@ -189,15 +193,24 @@
             <div class="slider__viewport">
 
               <figure class="slider__slide is-active">
-                <img src="assets/img/sobre-2.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet apresentando bolo gelado, torta no pote e brigadeiros" loading="lazy">
+                <picture>
+                  <source srcset="assets/img/sobre-2.webp" type="image/webp">
+                  <img src="assets/img/sobre-2.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet apresentando bolo gelado, torta no pote e brigadeiros" loading="lazy">
+                </picture>
               </figure>
 
               <figure class="slider__slide">
-                <img src="assets/img/sobre-3.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet com uma caixa de doces personalizados" loading="lazy">
+                <picture>
+                  <source srcset="assets/img/sobre-3.webp" type="image/webp">
+                  <img src="assets/img/sobre-3.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet com uma caixa de doces personalizados" loading="lazy">
+                </picture>
               </figure>
 
               <figure class="slider__slide">
-                <img src="assets/img/sobre-4.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet de uniforme" loading="lazy">
+                <picture>
+                  <source srcset="assets/img/sobre-4.webp" type="image/webp">
+                  <img src="assets/img/sobre-4.jpg" width="1000" height="1333" alt="Fundadores da D'Lícias Gourmet de uniforme" loading="lazy">
+                </picture>
               </figure>
 
             </div>
@@ -277,14 +290,20 @@
 
           <div class="socia__media">
             <div class="socia__frame socia__frame--main">
-              <img src="assets/img/marina-1.jpg" width="1000" height="1250" alt="Marina Fernandes Santos, sócia da D'Licias Gourmet"
-                   loading="lazy" onerror="this.closest('.socia__frame').classList.add('is-empty')">
+              <picture>
+                <source srcset="assets/img/marina-1.webp" type="image/webp">
+                <img src="assets/img/marina-1.jpg" width="1000" height="1250" alt="Marina Fernandes Santos, sócia da D'Licias Gourmet"
+                     loading="lazy" onerror="this.closest('.socia__frame').classList.add('is-empty')">
+              </picture>
               <div class="frame__placeholder" aria-hidden="true"><span>Foto da Marina</span></div>
             </div>
 
             <div class="socia__frame socia__frame--small">
-              <img src="assets/img/marina-2.jpg" width="572" height="747" alt="Marina Fernandes Santos"
-                   loading="lazy" onerror="this.closest('.socia__frame').remove()">
+              <picture>
+                <source srcset="assets/img/marina-2.webp" type="image/webp">
+                <img src="assets/img/marina-2.jpg" width="572" height="747" alt="Marina Fernandes Santos"
+                     loading="lazy" onerror="this.closest('.socia__frame').remove()">
+              </picture>
             </div>
 
             <span class="socia__badge">Sócia</span>
@@ -428,8 +447,11 @@
 
           <div class="encomendas__media">
             <div class="encomendas__frame">
-              <img src="assets/img/personalizado.jpg" width="581" height="576" alt="Caixa de brigadeiros e biscoitos personalizados de 15 anos da D'Licias Gourmet"
-                   loading="lazy" onerror="this.closest('.encomendas__frame').classList.add('is-empty')">
+              <picture>
+                <source srcset="assets/img/personalizado.webp" type="image/webp">
+                <img src="assets/img/personalizado.jpg" width="581" height="576" alt="Caixa de brigadeiros e biscoitos personalizados de 15 anos da D'Licias Gourmet"
+                     loading="lazy" onerror="this.closest('.encomendas__frame').classList.add('is-empty')">
+              </picture>
               <div class="frame__placeholder" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
                 <span>Foto dos personalizados</span>
@@ -481,8 +503,11 @@
 
         <div class="revenda__cta reveal">
           <div class="revenda__cta-media">
-            <img src="assets/img/produtos/salgados-festa.jpg" width="760" height="760" alt="Variedade de salgados congelados prontos para revenda"
-                 loading="lazy" onerror="this.closest('.revenda__cta-media').remove()">
+            <picture>
+              <source srcset="assets/img/produtos/salgados-festa.webp" type="image/webp">
+              <img src="assets/img/produtos/salgados-festa.jpg" width="760" height="760" alt="Variedade de salgados congelados prontos para revenda"
+                   loading="lazy" onerror="this.closest('.revenda__cta-media').remove()">
+            </picture>
           </div>
           <p>Vamos conversar sobre a parceria?</p>
           <a href="#" class="btn btn--whats btn--lg" data-whatsapp="Olá! Tenho interesse em ser revendedor(a) da D'Licias Gourmet. Pode me passar as condições?">

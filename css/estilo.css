@@ -723,6 +723,10 @@ p { text-wrap: pretty; }
   inset: 0;
 }
 
+/* Cada foto vem dentro de um <picture> (para servir WebP a quem
+   suporta). Ele é só um invólucro: quem se posiciona é a imagem. */
+.pgal picture { display: contents; }
+
 .pgal__img {
   position: absolute;
   inset: 0;
